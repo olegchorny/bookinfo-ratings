@@ -56,14 +56,14 @@ spec:
         - name: path
           value: /workspace/source/ksvc.yaml
         - name: yqArg
-          value: "-d1"
+          value: "-d0"
         - name: yamlPathToImage
           value: "spec.template.spec.containers[0].image"
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: ratings-pipeline-run-1
+  name: ratings-pipeline-run-3
 spec:
   trigger:
     type: manual
