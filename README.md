@@ -1,4 +1,2 @@
 # bookinfo-ratings
-Komet test
-build test
-another run
+Komet 0.2.28 test
