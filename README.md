@@ -1,2 +1,2 @@
 # bookinfo-ratings
-Komet 0.2.28 test
+Komet 0.3 test
