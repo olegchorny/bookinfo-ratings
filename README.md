@@ -1,2 +1,2 @@
 # bookinfo-ratings
-Komet demo
+mailgun test
