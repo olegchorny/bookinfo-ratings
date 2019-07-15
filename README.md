@@ -1,2 +1,2 @@
 # bookinfo-ratings
-mailgun test
+mailgun test #2
