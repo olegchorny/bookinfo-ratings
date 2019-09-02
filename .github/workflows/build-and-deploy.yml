@@ -53,4 +53,4 @@ jobs:
     steps:
     - name: DryRun
       run: |
-        kubectl create deployment $app --image docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha --dry-run -o yaml
+        kubectl create deployment $app --image=docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha --dry-run -o yaml
