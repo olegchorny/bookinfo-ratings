@@ -32,21 +32,21 @@ jobs:
         python-version: '3.x'
         architecture: 'x64' 
 
-#     - name: VKS test
-#       uses: ventus-ag/vks-action@master
-#       with: 
-#         authUrl: ${{ secrets.URL }}
-#         projectName: ${{ secrets.PROJECT }}
-#         domainName: ${{ secrets.DOMAIN }}
-#         userName: ${{ secrets.USER }}
-#         userDomainName: ${{ secrets.USERDOMAIN }}
-#         userPassword: ${{ secrets.PASSWORD }}
-#         clusterName: ${{ secrets.CLUSTER }}
+    - name: VKS test
+      uses: ventus-ag/vks-action@master
+      with: 
+        authUrl: ${{ secrets.URL }}
+        projectName: ${{ secrets.PROJECT }}
+        domainName: ${{ secrets.DOMAIN }}
+        userName: ${{ secrets.USER }}
+        userDomainName: ${{ secrets.USERDOMAIN }}
+        userPassword: ${{ secrets.PASSWORD }}
+        clusterName: ${{ secrets.CLUSTER }}
 
-#     - name: Setup docker registry secret 
-#       uses: azure/k8s-actions/k8s-create-secret@master
-#       with:
-#         container-registry-url: docker.pkg.github.com
-#         container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
-#         container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-#         secret-name: demo-k8s-secret
+    - name: Setup docker registry secret 
+      uses: azure/k8s-actions/k8s-create-secret@master
+      with:
+        container-registry-url: docker.pkg.github.com
+        container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
+        container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+        secret-name: demo-k8s-secret
