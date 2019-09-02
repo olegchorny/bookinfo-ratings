@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
+
     - uses: actions/checkout@v1
     - name: Build
       run: |
@@ -16,12 +17,12 @@ jobs:
         app="${GITHUB_REPOSITORY#*/}"
         docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha .
         
-   - name: Push
-     run: |
-       sha=${GITHUB_SHA:0:7}
-       app="${GITHUB_REPOSITORY#*/}"
-       docker login docker.pkg.github.com -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }}
-       docker push docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha
+    - name: Push
+      run: |
+        sha=${GITHUB_SHA:0:7}
+        app="${GITHUB_REPOSITORY#*/}"
+        docker login docker.pkg.github.com -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }}
+        docker push docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha
  
   kubectl:
     runs-on: ubuntu-latest
