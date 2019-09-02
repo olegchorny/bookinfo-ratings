@@ -46,7 +46,7 @@ jobs:
         container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
         container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         secret-name: registry-secret
-    - name: Patch service account to use imagePullSecret
+    - name: Patch default service account to use imagePullSecret
       run: |
         kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "registry-secret"}]}'
     - name: Deployment
