@@ -53,4 +53,6 @@ jobs:
     steps:
     - name: DryRun
       run: |
+        sha=${GITHUB_SHA:0:7}
+        app="${GITHUB_REPOSITORY#*/}"
         kubectl create deployment $app --image=docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha --dry-run -o yaml
