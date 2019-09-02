@@ -46,3 +46,11 @@ jobs:
         container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
         container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         secret-name: demo-k8s-secret
+        
+  deploy:
+    needs: [kubectl, build] 
+    runs-on: ubuntu-latest
+    steps:
+    - name: DryRun
+      run: |
+        kubectl create deployment $app --image docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha --dry-run -o yaml
