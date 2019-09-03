@@ -31,7 +31,7 @@ jobs:
       uses: ventus-ag/vks-action@master
       with: 
         authUrl: ${{ secrets.URL }}
-        projectName: ${{ secrets.PROJECT }}
+        projectDomainName: ${{ secrets.PROJECT }}
         domainName: ${{ secrets.DOMAIN }}
         userName: ${{ secrets.USER }}
         userDomainName: ${{ secrets.USERDOMAIN }}
