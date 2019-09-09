@@ -36,7 +36,7 @@ jobs:
         userName: ${{ secrets.USER }}
         userDomainName: ${{ secrets.USERDOMAIN }}
         userPassword: ${{ secrets.PASSWORD }}
-        clusterName: oleg
+        clusterName: ${{ secrets.CLUSTER }}
     - name: Create Namespace
       run: |
         kubectl create namespace $GITHUB_SHA --dry-run -o yaml | kubectl apply -f -
