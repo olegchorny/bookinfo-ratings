@@ -20,7 +20,7 @@ jobs:
         app="${GITHUB_REPOSITORY#*/}"
         docker login docker.pkg.github.com -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }}
         docker push docker.pkg.github.com/$GITHUB_REPOSITORY/$app:$sha
- #
+        
   deploy:
     runs-on: ubuntu-latest
     steps:
